@@ -1,0 +1,7 @@
+.idea/
+.vs/
+.vscode/
+l4t-gcc/
+Linux_for_Tegra
+*.tar*
+*.tbz2
