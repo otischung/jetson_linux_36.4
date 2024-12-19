@@ -1,7 +1,6 @@
 # Jetpack 6.1 L4T 36.4
 
 - Author: Otis B.C. Chung
-- LinkedIn: https://www.linkedin.com/in/otischung/
 
 
 
