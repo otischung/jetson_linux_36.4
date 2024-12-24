@@ -2,6 +2,16 @@
 
 set -euo pipefail
 
+echo -e "\033[1;33mWarning! This script can only run in Jetson Board.\033[0m"
+echo -e "\033[1;33mIf you are running in your host OS, this will BROKE YOUR SYSTEM!\033[0m"
+read -p "Do you want to continue? [y/N]: " user_input
+user_input=${user_input:-N}
+
+if [[ ! "$user_input" =~ ^[Yy]$ ]]; then
+    echo "Exiting..."
+    exit 0
+fi
+
 # Environment variables
 export INSTALL_MOD_PATH=/
 # export IGNORE_PREEMPT_RT_PRESENCE=1
