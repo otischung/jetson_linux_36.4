@@ -38,6 +38,15 @@ It also applies the official patches.
 
 ### Flash to Jetson Orin Nano Dev. Kit
 
+Before you flash, you have to disable the USB auto-suspend of your host OS. Edit `/etc/default/grub` and add `usbcore.autosuspend=-1` to `GRUB_CMDLINE_LINUX_DEFAULT`. Update your `grub` by `update-grub` and then reboot your computer.
+
+Reference: 
+
+- https://forums.developer.nvidia.com/t/error-might-be-timeout-in-usb-write/284646
+- https://unix.stackexchange.com/questions/91027/how-to-disable-usb-autosuspend-on-kernel-3-7-10-or-above
+
+Then you can start flashing your Jetson board.
+
 ```bash
 ./flash_jetson_orin_nano_nvme.sh
 ```
