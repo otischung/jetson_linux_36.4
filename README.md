@@ -71,6 +71,20 @@ Finally, [compile everything](#Compile-All) and then [flash](#Flash-to-Jetson-Or
 
 
 
+## Enable Wireguard and IPTables
+
+Ensure that you have completed [setting up the build environment](#Setup-the-Build-Environment), then run the following command:
+
+```bash
+./enable_all_kernel_module.sh
+```
+
+This configuration includes the [exFAT](#ExFAT-Filesystem-Issue).
+
+Finally, [compile everything](#Compile-All) and then [flash](#Flash-to-Jetson-Orin-Nano-Dev.-Kit) it to your device.
+
+
+
 ### GPIO Issue
 
 Ensure that you have completed [setting up the build environment](#Setup-the-Build-Environment), then run the following command:
@@ -92,3 +106,17 @@ sudo ln -s /etc/nvpmodel/nvpmodel_p3767_0001.conf /etc/nvpmodel.conf
 ```
 
 [Reference Page](https://developer.nvidia.com/embedded/learn/get-started-jetson-orin-nano-devkit#maxn)
+
+
+
+## Configure Your Own Kernel Modules
+
+You can configure your custom kernel modules using `make menuconfig` (also known as `nconfig`).
+
+```bash
+cd Linux_for_Tegra/source/kernel/kernel-jammy-src
+make ARCH=arm64 O=$(pwd) nconfig
+```
+
+After completing the configuration, press **F6** to save your configuration file. Then, replace the contents of the saved file with `Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/configs/defconfig`.
+
