@@ -76,7 +76,7 @@ Finally, [compile everything](#Compile-All) and then [flash](#Flash-to-Jetson-Or
 Ensure that you have completed [setting up the build environment](#Setup-the-Build-Environment), then run the following command:
 
 ```bash
-./enable_all_kernel_module.sh
+./enable_kernel_modules.sh
 ```
 
 This configuration includes the [exFAT](#ExFAT-Filesystem-Issue).
