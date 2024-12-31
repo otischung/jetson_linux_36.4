@@ -11,5 +11,5 @@ if [[ ! "$user_input" =~ ^[Yy]$ ]]; then
     exit 0
 fi
 
-cp defconfig_wireguard Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/configs/defconfig
+cp config/defconfig_default Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/configs/defconfig
 echo "Finished"
