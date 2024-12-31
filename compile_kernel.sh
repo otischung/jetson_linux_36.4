@@ -4,6 +4,7 @@ set -euo pipefail
 
 mkdir -p logs
 PROJ_BASE=$(pwd)
+sudo apt install -y flex bison libssl-dev
 
 # Environment variables
 export CROSS_COMPILE=${PROJ_BASE}/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
