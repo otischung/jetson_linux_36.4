@@ -6,6 +6,8 @@ sudo apt install -y lbzip2
 # Untar the files and assemble the rootfs
 tar xvf Jetson_Linux_R36.4.0_aarch64.tbz2 --use-compress-program=lbzip2
 sudo tar xpvf Tegra_Linux_Sample-Root-Filesystem_R36.4.0_aarch64.tbz2 -C Linux_for_Tegra/rootfs/ --use-compress-program=lbzip2
+# Remove netcat prerequest for Ubuntu 24.04
+./remove_netcat_prerequest.sh
 cd Linux_for_Tegra/
 sudo ./tools/l4t_flash_prerequisites.sh
 sudo ./apply_binaries.sh
