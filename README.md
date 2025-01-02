@@ -120,3 +120,40 @@ make ARCH=arm64 O=$(pwd) nconfig
 
 After completing the configuration, press **F6** to save your configuration file. Then, replace the contents of the saved file with `Linux_for_Tegra/source/kernel/kernel-jammy-src/arch/arm64/configs/defconfig`.
 
+
+
+## Notes for the Developer
+
+Here is the block for testing. Not sure for work.
+
+
+
+### defconfig_v1
+
+Add the following modules from the `defconfig_default_after_menuconfig`
+
+```
+File systems  --->
+	DOS/FAT/EXFAT/NT Filesystems  --->
+		<*> exFAT filesystem support
+		<*> NTFS Read-Write file system support
+```
+
+The following highlights the differences before and after applying the changes.
+
+```
+❯ diff defconfig_default_after_menuconfig defconfig_v1
+8728c8728,8729
+< # CONFIG_EXFAT_FS is not set
+---
+> CONFIG_EXFAT_FS=y
+> CONFIG_EXFAT_DEFAULT_IOCHARSET="utf8"
+8732c8733,8736
+< # CONFIG_NTFS3_FS is not set
+---
+> CONFIG_NTFS3_FS=y
+> # CONFIG_NTFS3_64BIT_CLUSTER is not set
+> # CONFIG_NTFS3_LZX_XPRESS is not set
+> # CONFIG_NTFS3_FS_POSIX_ACL is not set
+```
+
